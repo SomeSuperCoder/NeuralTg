@@ -1,4 +1,4 @@
-import type { Message } from "./message";
+import type { Message } from "./message.ts";
 import ollama from "ollama";
 
 export async function ask_ai(messages: Message[], model: string) {

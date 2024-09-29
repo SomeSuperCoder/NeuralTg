@@ -2,13 +2,19 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:ollama@latest": "npm:ollama@0.5.9",
+      "npm:pocketbase": "npm:pocketbase@0.21.5",
       "npm:pocketbase@latest": "npm:pocketbase@0.21.5",
       "npm:telegraf@latest": "npm:telegraf@4.16.3"
     },
     "npm": {
       "@telegraf/types@7.1.0": {
         "integrity": "sha512-kGevOIbpMcIlCDeorKGpwZmdH7kHbqlk/Yj6dEpJMKEQw5lk0KVQY0OLXaCswy8GqlIVLd5625OB+rAntP9xVw==",
+        "dependencies": {}
+      },
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
         "dependencies": {}
       },
       "abort-controller@3.0.0": {

@@ -1,5 +1,6 @@
-import Pocketbase, { ClientResponseError } from "pocketbase";
+import Pocketbase from "pocketbase";
 import { Role, type Message } from "./message.ts";
+import { User } from "./auth.ts";
 
 export interface Assistant extends BaseAssistant {
     messages: Message[]
@@ -30,7 +31,7 @@ async function load_bot(base_assistant: BaseAssistant, pb: Pocketbase) {
 }
 
 export async function load_bots(pb: Pocketbase) {
-    let result: Assistant[] = [];
+    const result: Assistant[] = [];
 
     const ais = await pb.collection('bots').getFullList({
         sort: '-created',
@@ -46,4 +47,10 @@ export async function load_bots(pb: Pocketbase) {
     }
     
     return result;
+}
+
+export async function load_users(pb: Pocketbase) {
+    return await pb.collection('users').getFullList({
+        sort: '-created',
+    }) as User[];
 }
